@@ -1,0 +1,48 @@
+.btn {
+  @apply flex h-8 max-h-8  pr-8 pt-2 pb-2 focus:bg-gray focus:border-accent focus:text-white shadow-md disabled:bg-gray-light disabled:border-gray-light disabled:text-gray disabled:cursor-not-allowed text-xs transition-all hover:bg-gray hover:border-gray hover:text-accent border-primary border bg-primary text-white justify-start items-center cursor-pointer outline-none leading-4 font-medium;
+
+  &.has-icon {
+    @apply pl-3;
+  }
+  &.no-icon {
+    @apply pl-8;
+  }
+
+  &.fab {
+    @apply w-8 h-8 p-0  justify-center;
+
+    .icon {
+      @apply mr-0;
+    }
+  }
+
+  .selected {
+    @apply bg-accent border-accent text-gray;
+  }
+
+  .icon {
+    @apply flex items-center justify-center w-6 h-6 mr-2;
+  }
+
+  .label {
+    @apply flex flex-1 text-xs text-left;
+  }
+
+  &.rounded {
+    @apply rounded-full;
+
+    .icon {
+      @apply mr-2;
+    }
+
+    &.rounded.fab {
+      .icon {
+        @apply mr-0;
+      }
+    }
+  }
+
+  &.link {
+    @apply bg-transparent shadow-none rounded-none border-none text-primary hover:underline	px-0 py-0 w-auto h-auto max-w-max hover:text-accent transition-all text-left;
+  }
+}

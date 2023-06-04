@@ -1,0 +1,23 @@
+<button
+  [disabled]="disabled"
+  class="btn group"
+  [class.rounded]="rounded"
+  [class.fab]="fab"
+  [class.link]="isLink"
+  [class.selected]="isSelected"
+  [class.has-icon]="hasIcon && !fab"
+  [class.no-icon]="!hasIcon && !fab"
+  (click)="onClick()"
+>
+  <ng-container *ngIf="fab || hasIcon">
+    <span class="icon">
+      <ng-content select="[slot=icon]"></ng-content>
+    </span>
+  </ng-container>
+
+  <ng-container *ngIf="!fab">
+    <span class="label">
+      <ng-content></ng-content>
+    </span>
+  </ng-container>
+</button>

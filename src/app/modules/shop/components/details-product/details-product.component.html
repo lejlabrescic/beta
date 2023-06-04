@@ -1,0 +1,51 @@
+<!-- Details Product -->
+<section id="prodetails" class="section-p1 flex sm:flex-col md:flex-row mt-3 lg:items-start sm:items-center">
+  <div class="md:w-[40%] sm:w-[100%] md:mr-12 sm:mr-0">
+    <img src="{{imgSrc}}" width="100%" #mainImg alt="">
+    <div class="flex justify-between mt-1">
+      <div class="basis-[24%] cursor-pointer" *ngFor="let proImg of proImgs; let i = index">
+        <img src="{{proImg.img}}" width="100%" alt="" (click)="chooseImg(proImg.img)">
+      </div>
+    </div>
+  </div>
+  <div class="mt-6 md:w-1/2 sm:w-full">
+    <h2 class="font-bold p-0" style = "font-size: 40px">{{titleProd}}</h2>
+    <div class="text-correct text-lg text-sm" style ="color : black; font-size: 15px;" role="alert">
+      <i class="fas fa-check-circle w-6 text-correct" style="background-color: white; color : black; "></i>
+       Available in store
+    </div>
+
+    <div>
+      <p style="color : black">Colors:</p>  
+      <section class = " flex sm:flex-col md:flex-row mt-3 ">
+        <div style="background-color: #8A0001; width: 50px; height: 50px; margin-right: 10px;"></div>
+        <div style="background-color: black; width: 50px; height: 50px; margin-right: 10px;"></div>
+        <div style="background-color: #70867A; width: 50px; height: 50px; "></div>
+      </section>   
+    </div><br><br>
+    
+    
+    
+    <button type="submit" (click)="addWishlist($event)" class="py-3 px-5 h-10 w-40 text-sm font-medium text-center text-black rounded-none bg-white sm:w-40 hover:bg-black hover:text-white focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" style = "border : 1 px solid black" routerLink="/home">
+      <i class="fas fa-heart"></i>
+      <span style="margin-left: 10px;">Add to Wishlist</span>
+    </button>
+    <br><br>
+    <button type="submit" (click)="addCart($event)" style ="border-color : black" class="py-3 px-5 h-10 w-40 text-sm font-medium text-center text-white rounded-none bg-black sm:w-40 hover:bg-white hover:text-black focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" routerLink="/home">
+      <i class="fas fa-shopping-cart cart"></i>
+      <span style="margin-left: 10px;">Add to Cart</span>
+    </button>
+    <br><br>
+    <h4 class="text-30-px" >{{priceProd}}</h4>
+
+  
+    <h4 class="font-bold px-0 pt-7 pb-4">Product Details</h4>
+    <span class="leading-6">
+      Our meticulously crafted garments are made from the finest fabrics, chosen for their softness, durability, and luxurious feel against the skin. Each piece is designed with attention to detail, ensuring a perfect fit and flattering silhouette for all body types.
+
+From sleek and sophisticated to casual and chic, our collection offers a diverse range of styles to suit every occasion. Whether you're dressing up for a special event or looking for everyday essentials, our clothing line has got you covered.
+
+Experience the joy of wearing our thoughtfully curated designs, featuring unique patterns, vibrant colors, and exquisite embellishments. Our talented team of designers has created a collection that effortlessly combines timeless elegance with modern trends, allowing you to express your individuality and stand out from the crowd.
+    </span>
+  </div>
+</section>
