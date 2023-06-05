@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ContactPageComponent } from './modules/contact/pages/contact-page/contact-page.component';
 import { WishlistModule } from './modules/wishlist/wishlist.module';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   path : 'signup', 
   component : SignupComponent
 
+},
+{
+  path : 'profile', 
+  component : ProfilePageComponent
 }
 ,{
   path : 'contact', 

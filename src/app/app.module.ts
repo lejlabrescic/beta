@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { WishlistModule } from './modules/wishlist/wishlist.module';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { WishlistModule } from './modules/wishlist/wishlist.module';
     LoginComponent,
     NewArrivalsComponent,
     SignupComponent,
+    ProfilePageComponent,
    
     
   ],
