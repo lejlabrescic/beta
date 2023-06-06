@@ -25,7 +25,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/assets",
-              "favicon.png"
+              "src/eFashion.png"
             ],
             "styles": [
               "src/styles.scss"
