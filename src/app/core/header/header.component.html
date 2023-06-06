@@ -6,50 +6,65 @@
         <h1 style="font-weight: bold; font-size: 30px; line-height: 57px; line-height: 100%; align-self: left; color: black; vertical-align: top; margin-right: 10px;">eFashion</h1>
       </div>
     </a>
-    
-    <a class="inline-block py-2 px-3 hover:bg-white rounded-full" routerLink="/shop">
-      <div class="flex items-center relative cursor-pointer whitespace-nowrap">Our products</div>
+  </div>
+
+  <div class="block md:hidden">
+    <button class="flex items-center justify-center h-10 w-10" onclick="toggleMenu()">
+      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- navigation menu -->
+  <div class="hidden md:flex items-center flex-grow">
+    <a class="inline-block py-2 px-3 hover:bg-white rounded-full" href="/shop">
+      <div class="whitespace-nowrap">Our products</div>
     </a>
-    <a class="inline-block py-2 px-3 hover:bg-white rounded-full" routerLink="/contact">
-      <div class="flex items-center relative cursor-pointer whitespace-nowrap">Support</div>
+    <a class="inline-block py-2 px-3 hover:bg-white rounded-full" href="/contact">
+      <div class="whitespace-nowrap">Support</div>
     </a>
   </div>
 
-
   <!-- search bar -->
-
-  <div class="flex-grow"></div> <!-- Add this div to push the following items to the right -->
-
-  <div class="flex items-center">
-    <div class="hidden sm:block flex-shrink flex-grow-0 justify-start px-2">
-      <div class="inline-block">
-        <div class="inline-flex items-center max-w-full">
-          <button class="flex items-center flex-grow-0 flex-shrink pl-2 relative w-60 border rounded-full px-1 py-1" type="button" value="Search" style="border-color: black;"> 
-            <div class="flex items-center justify-center relative h-6 w-5 rounded-full"> 
-              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 15px; width: 15px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;">
-                <g fill="none">
-                  <path d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"></path>
-                </g>
-              </svg> 
-            </div>
-            <div style="margin-right: 10px;"></div>
-            Search 
-          </button>
-        </div>
+  <div class="hidden sm:flex items-center flex-grow">
+    <div class="inline-block">
+      <div class="inline-flex items-center max-w-full">
+        <button class="flex items-center flex-grow-0 flex-shrink pl-2 relative w-60 border rounded-full px-1 py-1" type="button" value="Search" style="border-color: black;"> 
+          <div class="flex items-center justify-center relative h-6 w-5 rounded-full"> 
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 15px; width: 15px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;">
+              <g fill="none">
+                <path d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"></path>
+              </g>
+            </svg> 
+          </div>
+          <div style="margin-right: 10px;"></div>
+          Search 
+        </button>
       </div>
     </div>
-    <a class="inline-block py-2 px-3 hover:bg-white rounded-full" routerLink="/profile">
-      <a #add routerLink="cart.html" class="wishlist" ><i class="fas fa-user"></i></a>
+  </div>
+
+  <!-- user actions -->
+  <div class="flex items-center">
+    <a class="inline-block py-2 px-3 hover:bg-white rounded-full" href="/profile">
+      <i class="fas fa-user"></i>
     </a>
     <a class="inline-block py-2 px-3 hover:bg-white rounded-full" href="/cart">
-
-    <a #add routerLink="/cart" class="cart"  ><i class="fas fa-shopping-cart cart"></i></a></a>
-    <a class="inline-block py-2 px-3 hover:bg-white rounded-full" routerLink="/wishlist">
-      <a #add routerLink="/wishlist" class="wishlist" ><i class="fas fa-heart"></i></a>
+      <i class="fas fa-shopping-cart cart"></i>
     </a>
-
-    <a class="inline-block py-2 px-3 hover:bg-white rounded-full" routerLink="/login">
-      <div class="flex items-center relative cursor-pointer whitespace-nowrap">Sign in</div>
+    <a class="inline-block py-2 px-3 hover:bg-white rounded-full" href="/wishlist">
+      <i class="fas fa-heart"></i>
+    </a>
+    <a class="inline-block py-2 px-3 hover:bg-white rounded-full" href="/login">
+      <div class="whitespace-nowrap">Sign in</div>
     </a>
   </div>
 </nav>
+
+<script>
+  function toggleMenu() {
+    var menu = document.getElementsByClassName("hidden md:flex")[0];
+    menu.classList.toggle("hidden");
+  }
+</script>
