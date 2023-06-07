@@ -66,7 +66,7 @@ module.exports = {
         feat4: "#cdd4f8",
         feat5: "#f6dbf6",
         feat6: "#fff2e5",
-        featBorder: "#cce7d0",
+        featBorder: "#FFFFFF",
         prod: "#606063",
         star: "#f3b519",
         cartPro: "#e8f6ea",
