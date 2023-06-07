@@ -2,6 +2,7 @@
 <section id="prodetails" class="section-p1 flex sm:flex-col md:flex-row mt-3 lg:items-start sm:items-center">
   <div class="md:w-[40%] sm:w-[100%] md:mr-12 sm:mr-0">
     <img src="{{imgSrc}}" width="100%" #mainImg alt="">
+    <br>
     <div class="flex justify-between mt-1">
       <div class="basis-[24%] cursor-pointer" *ngFor="let proImg of proImgs; let i = index">
         <img src="{{proImg.img}}" width="100%" alt="" (click)="chooseImg(proImg.img)">
