@@ -51,7 +51,7 @@ export class DetailsProductComponent{
         this.dataService.removeCartItem(product);
       }
     }
-    this.dataService.addCart(product);
+    this.dataService.addWishlist(product);
   }
 
   valChange(event: any) {

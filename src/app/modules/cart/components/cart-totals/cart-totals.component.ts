@@ -19,7 +19,6 @@ export class CartTotalsComponent implements OnInit {
       this.shipping = 10;
       this.total = this.subtotal + this.shipping;
   }
-  // Checkout Proceed
   checkout() {
     if (this.dataService.cartItemList.length != 0) {
       this.alertMassage = true;

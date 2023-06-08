@@ -9,9 +9,7 @@ import { DataService } from 'src/app/shared/services/data.service';
 })
 export class CartPageComponent implements OnInit {
   head = "#cart";
-  p = 'Add your coupon code & SAVE up to 70%!';
   constructor(private router: Router, private dataService: DataService) {
-    // router to empty page if don't have any items
     if (this.dataService.cartItemList.length == 0) {
       this.router.navigate(['cart/empty-cart']);
     }

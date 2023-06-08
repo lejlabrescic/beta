@@ -5,10 +5,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  // Cart Table
   public cartItemList : any =[]
   public productList = new BehaviorSubject<any>([]);
-  public search = new BehaviorSubject<string>("");
 
   constructor() {}
 
@@ -21,6 +19,11 @@ export class DataService {
     this.productList.next(product);
   }
   addCart(product : any){
+    this.cartItemList.push(product);
+    this.productList.next(this.cartItemList);
+    this.getTotalPrice();
+  }
+  addWishlist(product : any){
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
     this.getTotalPrice();

@@ -7,7 +7,7 @@ import { ChildrenOutletContexts, NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'E-Commerce-Trendy-Clothes';
+  title = 'eFashion';
   constructor(private router: Router, private contexts: ChildrenOutletContexts) {
     // window.location.reload.call(window.scrollTo({top: 0, behavior: 'smooth'}));
   }

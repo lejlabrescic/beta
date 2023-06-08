@@ -28,20 +28,13 @@ export class Product1Component {
   }
     
 
-  // Add Products to Cart
   addProduct(event: any) {
     var addProd = event.target;
-    // Show Quantity
-    this.add.forEach((items:any) => {
-        // items.nativeElement.classList.remove("hidden");
-        // items.nativeElement.previousSibling.classList.remove("flex");
-        // items.nativeElement.previousSibling.classList.add("hidden");
-    });
+    
     addProd.parentElement.classList.add("hidden");
     addProd.parentElement.previousSibling.classList.remove("hidden")
     addProd.parentElement.previousSibling.classList.add("flex")
     addProd.parentElement.previousSibling.firstChild.nextSibling.value = 1;
-    // add product to Cart
     var shopProd = addProd.parentElement.parentElement;
     this.imgSrc = shopProd.firstChild.src;
     this.titleProd = shopProd.firstChild.nextSibling.firstChild.nextSibling.innerText;
@@ -55,16 +48,13 @@ export class Product1Component {
       total: parseFloat(this.priceProd.replace("$", "")) * this.quantity,
     }
     console.log(this.product)
-    // Delete Old same Product.
     for (let i = 0; i < this.dataService.cartItemList.length; i++) {
       if (this.product.title == this.dataService.cartItemList[i].title) {
         this.dataService.removeCartItem(this.product);
       }
     }
-    // Add to Cart
     this.dataService.addCart(this.product);
   }
-  // Open Page Details Products
   detailsProd(event:any) {
     var detailsProd = event.target;
     this.imgSrc = detailsProd.src;
@@ -73,34 +63,27 @@ export class Product1Component {
     window.localStorage.setItem("Product Title", this.titleProd);
     window.localStorage.setItem("Product Price", this.priceProd);
     window.localStorage.setItem("Product Img", this.imgSrc);
-    // router to Page Details Products
     if (window.location.pathname != 'shop/product-details') {
       this.router.navigate(['shop/product-details']);
     }
-    // set Products localStorage
     if (window.location.pathname == 'shop/product-details') {
       this.setStorage.ngOnInit();
     }
-    // scroll to top
     window.scrollTo({top: 0, behavior: 'smooth'})
   }
-  // Counter Up & Down
   downCounter(event:any) {
   var down = event.target;
   down.nextSibling.value--;
   this.product.quantity--;
-  // Delete Old same Product.
   for (let i = 0; i < this.dataService.cartItemList.length; i++) {
     if (this.product.title == this.dataService.cartItemList[i].title) {
       this.dataService.removeCartItem(this.product);
     }
   }
-  // Add to Cart
   this.product.total = parseFloat(this.priceProd.replace("$", "")) * this.product.quantity;
   this.dataService.addCart(this.product);
   if (isNaN(down.nextSibling.value) || down.nextSibling.value <= 0) {
     down.nextSibling.value = 0;
-    // this.product.quantity = 1;
     down.parentElement.nextSibling.classList.remove("hidden");
     down.parentElement.classList.remove("flex")
     down.parentElement.classList.add("hidden")
@@ -111,21 +94,17 @@ export class Product1Component {
   var up = event.target;
   up.previousSibling.value++;
   this.product.quantity++;
-  // Delete Old same Product.
   for (let i = 0; i < this.dataService.cartItemList.length; i++) {
     if (this.product.title == this.dataService.cartItemList[i].title) {
       this.dataService.removeCartItem(this.product);
     }
   }
-  // Add to Cart
   this.product.total = parseFloat(this.priceProd.replace("$", "")) * this.product.quantity;
   this.dataService.addCart(this.product);
   }
-  // Products
   products: any[] = [
     {
       id: 1,
-      // img: '../../../../assets/img/products/f1.jpg',
       img: '../../../../assets/img/Product2 (1).png',
       mark: 'ZARA',
       title: 'Armelia pants',
@@ -235,7 +214,6 @@ export class Product1Component {
     },
     
   ]
-  // Loop Stars
   starLoop(n: number): Array<number> {
     return Array(n);
   }
