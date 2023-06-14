@@ -1,6 +1,6 @@
 # e-Fashion
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2. To access the deployed project, click on the [link](https://efashion-hci.netlify.app/home).
 
 ## Development server
 
